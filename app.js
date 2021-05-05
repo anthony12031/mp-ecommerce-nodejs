@@ -2,6 +2,7 @@ var express = require('express');
 var exphbs  = require('express-handlebars');
 require('dotenv').config();
 
+
 var port = process.env.PORT || 3000
 
 // SDK de Mercado Pago
@@ -13,6 +14,9 @@ mercadopago.configure({
 });
 
 var app = express();
+
+// parse application/json
+app.use(express.json());
  
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -42,7 +46,7 @@ app.get('/error', function (req, res) {
 });
 
 app.post('/meli-notification', function(req ,res) {
-    console.log(req);
+    console.log(JSON.stringify(req.body));
     res.status(201).send("created");
 });
 
