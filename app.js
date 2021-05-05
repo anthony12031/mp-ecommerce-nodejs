@@ -77,7 +77,7 @@ async function createPreference({title, unit, price, img}) {
             failure: `${process.env.HOST}/failure`,
             pending: `${process.env.HOST}/pending`
         },
-        auto_return: "all",
+        auto_return: "approved",
         payment_methods: {
             excluded_payment_methods: [
                 {
