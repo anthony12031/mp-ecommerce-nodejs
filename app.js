@@ -42,7 +42,7 @@ app.get('/error', function (req, res) {
 });
 
 app.post('/meli-notification', function(req ,res) {
-    console.log(JSON.stringify(req));
+    console.log(req);
     res.status(201).send("created");
 });
 
