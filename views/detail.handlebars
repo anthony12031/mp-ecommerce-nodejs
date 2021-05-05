@@ -84,7 +84,7 @@
                                     {{ unit }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post"></button>
+                            <a type="submit" href={{init_point}} class="mercadopago-button" formmethod="post">Pagar la Compra</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
 <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
 <script>
 // Agrega credenciales de SDK
-  const mp = new MercadoPago("{{PUBLIC_KEY}}", {
+  {{!-- const mp = new MercadoPago("{{PUBLIC_KEY}}", {
         locale: 'es-CO'
   });
 
@@ -109,6 +109,6 @@
             container: '.mercadopago-button', // Indica dónde se mostrará el botón de pago
             label: 'Pagar la Compra', // Cambia el texto del botón de pago (opcional)
       }
-});
+}); --}}
 </script>
    

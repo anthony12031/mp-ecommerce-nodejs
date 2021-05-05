@@ -49,7 +49,12 @@ app.post('/meli-notification', function(req ,res) {
 app.get('/detail', async function (req, res) {
     try {
         const preference = await createPreference(req.query);
-        res.render('detail', {...req.query, preferenceId: preference.body.id, PUBLIC_KEY: process.env.PUBLIC_KEY});
+        res.render('detail', {
+            ...req.query, 
+            init_point: preference.body.init_point,
+            preferenceId: preference.body.id, 
+            PUBLIC_KEY: process.env.PUBLIC_KEY
+        });
     } catch(error) {
         res.status(500).send("error creating preference")
     }
