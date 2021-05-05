@@ -70,7 +70,7 @@ app.listen(port, () => {
 
 async function createPreference({title, unit, price, img}) {
     const preference = {
-        external_reference: "anthonyjasonvargassepulveda@gmail.com",
+        external_reference: "ajvargass@correo.udistrital.edu.co",
         notification_url: process.env.NOTIFICATION_URL,
         back_urls: {
             success: `${process.env.HOST}/success`,
