@@ -43,6 +43,7 @@ app.get('/error', function (req, res) {
 
 app.post('/meli-notification', function(req ,res) {
     console.log(JSON.stringify(req.body));
+    res.status(201).send("created");
 });
 
 app.get('/detail', async function (req, res) {
