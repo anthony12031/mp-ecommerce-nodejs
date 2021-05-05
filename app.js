@@ -86,7 +86,7 @@ async function createPreference({title, unit, price, img}) {
             ],
             excluded_payment_types: [
                 {
-                    id: "ticket"
+                    id: "atm"
                 }
             ],
             installments: 6,
@@ -96,7 +96,7 @@ async function createPreference({title, unit, price, img}) {
             id: 1234,
             title,
             description: "Dispositivo móvil de Tienda e-commerce",
-            picture_url: img,
+            picture_url: `${process.env.HOST}/${img}`,
             quantity: +unit,
             currency_id: 'COP',
             unit_price: +price
@@ -108,8 +108,8 @@ async function createPreference({title, unit, price, img}) {
             email: "test_user_83958037@testuser.com",
             date_created: new Date(),
             phone: {
-                area_code: "57",
-                number: 681094118
+                area_code: "52",
+                number: 5549737300
             },
             address: {
                 street_name: "Insurgentes Sur",
