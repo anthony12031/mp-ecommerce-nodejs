@@ -84,7 +84,7 @@
                                     {{ unit }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                            <button type="submit" class="mercadopago-button" formmethod="post"></button>
                         </div>
                     </div>
                 </div>
@@ -92,4 +92,23 @@
         </div>
     </div>
 </div>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
+<script>
+// Agrega credenciales de SDK
+  const mp = new MercadoPago("{{PUBLIC_KEY}}", {
+        locale: 'es-CO'
+  });
+
+  // Inicializa el checkout
+  mp.checkout({
+      preference: {
+          id: "{{preferenceId}}"
+      },
+      render: {
+            container: '.mercadopago-button', // Indica dónde se mostrará el botón de pago
+            label: 'Pagar la Compra', // Cambia el texto del botón de pago (opcional)
+      }
+});
+</script>
    
