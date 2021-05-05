@@ -96,7 +96,7 @@ async function createPreference({title, unit, price, img}) {
             id: 1234,
             title,
             description: "Dispositivo móvil de Tienda e-commerce",
-            picture_url: `${process.env.HOST}/${img}`,
+            picture_url: `${process.env.HOST}${img.split('.')[1]}`,
             quantity: +unit,
             currency_id: 'COP',
             unit_price: +price
